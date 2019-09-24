@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+        function validaInfo(info = null, tipoInfo = null)
+        {
+            if ( info == null || tipoInfo == null ) {
+                return false
+            }
+
+            switch( tipoInfo ) {
+                case "texto":
+                    if ( typeof info === 'string')
+                        return true;
+                    break;
+                case "numero":
+                    if ( typeof parseInt(info) === 'number')
+                        return true;
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+
+            return false;
+        }
+
+        function agregarUsuarios()
+        {
+            //declaracion de usuarios
+            let usuarios = []
+
+            //ciclo para agregar usuarios cuando el usuario asi lo desee
+            while ( confirm("Deseas agregar un nuevo usuario?") )
+            {
+                let nombre          = ""
+                let nombreValido    = true
+
+                let edad            = -1
+                let edadValida      = true
+
+                let genero          = ""
+                let generoValido    = true
+
+                while( nombre.length == 0 ) {
+                    
+                    if ( nombreValido )
+                        nombre  = prompt("Ingrese NOMBRE de usuario: ")
+                    else 
+                        nombre  = prompt("Ingrese NOMBRE de usuario válido: ")
+
+                    if ( !validaInfo( nombre, "texto" ) ) {
+                        nombre          = ""
+                        nombreValido    = false
+                    }
+                }
+
+                while( edad == -1 ) {
+                    
+                    if ( edadValida )
+                        edad  = prompt("Ingrese EDAD de usuario: ")
+                    else 
+                        edad  = prompt("Ingrese EDAD de usuario válida: ")
+
+                    if ( !validaInfo( edad, "numero") ) {
+                        edad = -1
+                        edadValida = false
+                    }
+                }
+
+                while( genero == "" ) {
+                    
+                    if ( generoValido )
+                        genero  = prompt("Ingrese GÉNERO de usuario: ")
+                    else 
+                        genero  = prompt("Ingrese GÉNERO de usuario válido: ")
+
+                    if ( !validaInfo(genero, "texto") ) {
+                        genero          = ""
+                        generoValido    = false
+                    }
+                }
+                
+
+                usuarios.push( { nombre, edad, genero } )
+            }
+
+            console.log(usuarios)
+
+        }
+
+        //llamada a la función creada
+        agregarUsuarios()
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

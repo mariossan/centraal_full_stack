@@ -1,0 +1,63 @@
+<script>
+
+    // let nombre      = prompt("Imgrese Nombre: ")
+    // let edad        = prompt("Imgrese edad: ")
+    // let telefono    = prompt("Imgrese telefono: ")
+
+    // function Persona(nombre, edad, telefono){
+    //     this.nombre     = nombre
+    //     this.edad       = edad
+    //     this.telefono   = telefono
+
+    //     this.comer = function() {
+    //         console.log('estoy comiendo')
+    //     }
+
+    //     this.dormir = function() {
+    //         console.log('zzz zzz')
+    //     }
+    // }
+    
+    // let p1 = new Persona(nombre, edad, telefono)
+    // console.log(p1)
+    // p1.comer()
+    // p1.dormir()
+
+
+    // asignacion de jugetes
+    let juguetes            = new Array()
+    let asignarMasJuguetes  = true
+
+    let nombre = prompt("Ingrese nombre:")
+    let edad = prompt("Ingrese edad:")
+
+    do
+    {
+        juguetes.push( prompt("ingrese un juguete:") )
+
+        if ( menu() == 2 ){
+            asignarMasJuguetes = false
+        }
+
+
+    } while( asignarMasJuguetes )
+
+
+    function Animal(nombre, edad, juguetes)
+    {
+        this.nombre = nombre
+        this.edad   = edad
+        this.juguetes = juguetes
+    }
+
+    // creacion del animal
+    let animal = new Animal(nombre, edad, juguetes)
+
+    console.log(animal)
+
+    function menu()
+    {
+        return prompt("Desea agregar mas juegutes:\n1 = si\n2 = no")
+    }
+
+</script>

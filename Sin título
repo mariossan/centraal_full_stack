@@ -1,0 +1,23 @@
+        let nombre = prompt('Ingrese su nombre');
+        console.log('nombre',nombre);
+    
+        let correo = prompt('Ingrese su correo');
+        console.log('correo',correo);
+
+        let password = prompt('Ingrese su password');
+        console.log('password',password);
+        
+
+        let usuario = {
+            nombre: nombre,
+            correo: correo,
+            password:password
+        }
+        
+        let newArrayUser = [];
+
+        newArrayUser.push[usuario]
+
+
+        console.log(newArrayUser);
+        
